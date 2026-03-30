@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Tinder</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <div class="logo-container">
+            <div class="header-title">Nail Tinder</div>
+        </div>
+        <div class="nav-links">
+            <div class="nav-item active" id="nav-learn" onclick="showPage('learn')"><i class="fa-solid fa-fire"></i>
+                Rate Designs</div>
+            <div class="nav-item" id="nav-picks" onclick="showPage('picks')"><i class="fa-solid fa-grip"></i> My Picks
+            </div>
+            <div class="nav-item" id="nav-profile" onclick="showPage('profile')"><i class="fa-solid fa-user"></i>
+                Dashboard</div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <div id="page-learn" class="page active-page">
+            <div class="progress-container">
+                <div class="progress-text">Nail Art Recommendations</div>
+            </div>
+
+            <div class="card-stack" id="card-stack">
+                <!-- Card C: deepest (upcoming — pre-loaded, invisible behind B) -->
+                <div class="card-container" id="card-c">
+                    <img id="image-c" src="" alt="Nail Design" draggable="false">
+                    <div class="card-title-overlay" id="title-c"></div>
+                </div>
+                <!-- Card B: middle (next — peeking behind A) -->
+                <div class="card-container" id="card-b">
+                    <img id="image-b" src="" alt="Nail Design" draggable="false">
+                    <div class="card-title-overlay" id="title-b"></div>
+                </div>
+                <!-- Card A: top (current) -->
+                <div class="card-container" id="card-a">
+                    <img id="image-a" src="" alt="Nail Design" draggable="false">
+                    <div class="card-title-overlay" id="title-a"></div>
+                </div>
+                <div id="drag-overlay"></div>
+            </div>
+
+            <div class="end-state" id="end-state" style="display:none;">
+                <div class="end-icon">💅</div>
+                <h2 class="end-title">You've seen everything!</h2>
+                <p class="end-sub">Your AI has learned your taste.<br>Check your picks or reset to start over.</p>
+                <div class="end-actions">
+                    <button class="btn-end-picks" onclick="showPage('picks')"><i class="fa-solid fa-grip"></i> View My Picks</button>
+                    <button class="btn-end-reset" onclick="resetHistory()"><i class="fa-solid fa-rotate-left"></i> Start Over</button>
+                </div>
+            </div>
+
+            <div class="action-buttons" id="action-buttons">
+                <button class="btn-action btn-dislike" onclick="animateAndSwipe('dislike')" title="Dislike (←)"><i
+                        class="fa-solid fa-xmark"></i></button>
+                <button class="btn-action btn-like" onclick="animateAndSwipe('like')" title="Like (→)"><i
+                        class="fa-solid fa-heart"></i></button>
+            </div>
+        </div>
+
+        <div id="page-picks" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Your AI Picks</h1>
+            </div>
+            <div id="picks-container" class="picks-grid">
+                <p style="color: var(--text-muted);">Analyzing your preferences...</p>
+            </div>
+        </div>
+
+        <div id="page-profile" class="page">
+            <div class="page-header">
+                <h1 class="page-title">Taste Dashboard</h1>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card liked">
+                    <div id="stat-likes" class="stat-num">0</div>
+                    <div class="stat-label">Liked</div>
+                </div>
+                <div class="stat-card disliked">
+                    <div id="stat-dislikes" class="stat-num">0</div>
+                    <div class="stat-label">Disliked</div>
+                </div>
+            </div>
+
+            <button class="btn-reset" onclick="resetHistory()">Reset AI Profile</button>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

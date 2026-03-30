@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#30302f",
+              "on-secondary-container": "#646464",
+              "on-secondary-fixed-variant": "#464747",
+              "surface-container-highest": "#e4e2e0",
+              "primary": "#a52e5a",
+              "secondary-fixed": "#e3e2e2",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f5f3f1",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#a8315c",
+              "secondary-container": "#e3e2e2",
+              "surface-container-high": "#eae8e6",
+              "on-surface": "#1b1c1b",
+              "tertiary-fixed": "#93f6c9",
+              "inverse-on-surface": "#f2f0ee",
+              "on-background": "#1b1c1b",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#dbdad8",
+              "error-container": "#ffdad6",
+              "tertiary": "#00694a",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#005139",
+              "on-tertiary-container": "#f5fff7",
+              "surface-container": "#efedec",
+              "inverse-primary": "#ffb1c4",
+              "on-secondary-fixed": "#1b1c1c",
+              "background": "#fbf9f7",
+              "surface-variant": "#e4e2e0",
+              "on-primary": "#ffffff",
+              "outline-variant": "#dcbfc5",
+              "surface-bright": "#fbf9f7",
+              "on-surface-variant": "#564146",
+              "surface": "#fbf9f7",
+              "secondary-fixed-dim": "#c7c6c6",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#77d9ae",
+              "on-tertiary-fixed": "#002115",
+              "primary-fixed-dim": "#ffb1c4",
+              "secondary": "#5e5e5e",
+              "error": "#ba1a1a",
+              "primary-fixed": "#ffd9e1",
+              "on-primary-fixed-variant": "#881645",
+              "primary-container": "#c54772",
+              "tertiary-container": "#148460",
+              "on-primary-fixed": "#3f001a",
+              "on-primary-container": "#fffbff",
+              "outline": "#897176"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fbf9f7;
+        color: #1b1c1b;
+      }
+      .editorial-header {
+        font-family: 'Noto Serif', serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#fbf9f7] dark:bg-stone-950 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#a52e5a] dark:text-[#c54772]" data-icon="menu">menu</span>
+<span class="font-serif italic text-2xl text-[#a52e5a] dark:text-[#c54772]">MyManicure</span>
+</div>
+<span class="material-symbols-outlined text-[#a52e5a] dark:text-[#c54772]" data-icon="notifications">notifications</span>
+</header>
+<main class="max-w-2xl mx-auto px-6 pt-8 pb-32">
+<!-- Header Section -->
+<header class="mb-10">
+<h1 class="editorial-header text-5xl font-bold tracking-tight text-on-surface mb-2">Your profile</h1>
+<p class="text-on-secondary-container text-lg font-body">Manage your nail taste</p>
+</header>
+<!-- Stats Row -->
+<section class="grid grid-cols-2 gap-4 mb-12">
+<!-- Liked Card -->
+<div class="bg-tertiary-container/10 p-6 rounded-lg flex flex-col items-start justify-center transition-transform hover:scale-[1.02] duration-300">
+<span class="text-4xl font-headline font-bold text-tertiary mb-1">47</span>
+<span class="text-sm font-label uppercase tracking-widest text-on-secondary-container">Liked</span>
+</div>
+<!-- Disliked Card -->
+<div class="bg-error-container/30 p-6 rounded-lg flex flex-col items-start justify-center transition-transform hover:scale-[1.02] duration-300">
+<span class="text-4xl font-headline font-bold text-on-error-container mb-1">31</span>
+<span class="text-sm font-label uppercase tracking-widest text-on-secondary-container">Disliked</span>
+</div>
+</section>
+<!-- Taste Summary Section -->
+<section class="mb-12">
+<h2 class="text-[10px] font-label font-bold uppercase tracking-[0.2em] text-on-secondary-container mb-4">Your style</h2>
+<div class="flex flex-wrap gap-3">
+<span class="px-6 py-2.5 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-sm font-medium">Minimalist</span>
+<span class="px-6 py-2.5 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-sm font-medium">Pastel</span>
+<span class="px-6 py-2.5 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-sm font-medium">Matte</span>
+<span class="px-6 py-2.5 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-sm font-medium">Short length</span>
+</div>
+</section>
+<!-- Recalibrate/Preferences Section -->
+<section class="mb-12">
+<h2 class="text-[10px] font-label font-bold uppercase tracking-[0.2em] text-on-secondary-container mb-4">Preferences</h2>
+<div class="space-y-4">
+<!-- Option Row 1: Reset -->
+<button class="w-full flex items-center justify-between p-6 bg-surface-container-lowest rounded-lg group transition-all hover:bg-surface-container-low active:scale-95 duration-200">
+<div class="flex flex-col items-start text-left">
+<span class="text-primary font-bold text-lg mb-0.5">Reset all</span>
+<span class="text-on-secondary-container text-sm">Start fresh with new swipes</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Option Row 2: Refine -->
+<button class="w-full flex items-center justify-between p-6 bg-surface-container-lowest rounded-lg group transition-all hover:bg-surface-container-low active:scale-95 duration-200">
+<div class="flex flex-col items-start text-left">
+<span class="text-on-surface font-bold text-lg mb-0.5">Refine taste</span>
+<span class="text-on-secondary-container text-sm">Add 10 more swipes to your profile</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Editorial Quote / Image Break -->
+<div class="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-12">
+<img alt="aesthetic shot of manicured hands holding a silk fabric" class="w-full h-full object-cover" data-alt="close-up of elegant female hands with neutral manicure resting on soft ivory silk fabric with warm cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEYV7kGB8ySXU6eMQuflLJ9I6Az_yIbFUwV-IqXdjV-ZHTMsK7u4FG-eTI1G1Vf364D1GnSmyNXALvG1lWP9WqpvtsNhEVNcknbOP8POSEcfC6A-AC-mUKxwZRR7ILoxTWNMlDNSGyZSFqlEVsPvtrYD0fIY0Z5U3naBSXVOJXRlvNzlnkQBIgj61DX7GFbR00_0nPGVEsdYTT4Wb20ScSZgS9SDA8Zay0pdhKl5TIZv360kg5vPjher9F6hFERzTGO8-_usIPaLt3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent flex items-end p-8">
+<p class="font-headline italic text-white text-xl">"True elegance is the freedom to be oneself."</p>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full flex justify-center items-center pb-32">
+<p class="font-sans text-xs tracking-tight text-center text-stone-400">MyManicure · Your personal nail stylist</p>
+</footer>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-11 left-0 right-0 z-50 flex justify-center items-center px-4 pointer-events-none">
+<div class="pointer-events-auto flex justify-around items-center w-[90%] max-w-md bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl rounded-full border border-stone-200/10 shadow-[0_20px_40px_rgba(165,46,90,0.06)] px-4 py-3">
+<!-- Learn -->
+<a class="flex items-center justify-center text-stone-400 dark:text-stone-500 w-12 h-12 hover:text-[#a52e5a] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+</a>
+<!-- Picks -->
+<a class="flex items-center justify-center text-stone-400 dark:text-stone-500 w-12 h-12 hover:text-[#a52e5a] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex items-center justify-center bg-[#a52e5a] text-white rounded-full w-12 h-12 scale-90 duration-300 ease-out shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+</a>
+</div>
+</nav>
+</body></html>

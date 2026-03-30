@@ -1,0 +1,411 @@
+/* --- ЦВЕТА И ПЕРЕМЕННЫЕ --- */
+:root {
+    --bg-color: #faf8f8;
+    --primary: #942b51;
+    --primary-light: #fbebf0;
+    --text-dark: #1a1a1a;
+    --text-muted: #888;
+    --card-bg: #ffffff;
+    --match-green: #7fd7a4;
+    --like-green: #006b54;
+    --dislike-red: #c92a2a;
+    --stats-green-bg: #e2efeb;
+    --stats-red-bg: #faefef;
+}
+
+/* --- ГЛОБАЛЬНЫЕ СТИЛИ --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- ДЕСКТОПНАЯ НАВИГАЦИЯ --- */
+.top-nav {
+    background-color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-item {
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-item:hover {
+    background-color: #f5f5f5;
+    color: var(--text-dark);
+}
+
+.nav-item.active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+}
+
+/* --- ГЛАВНЫЙ КОНТЕЙНЕР --- */
+.main-content {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.active-page {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- СТРАНИЦА LEARN --- */
+.learn-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-container {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.progress-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+/* --- Card Stack --- */
+.card-stack {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.card-container {
+    position: absolute;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5eef2 0%, #fce8f1 100%);
+    top: 0;
+    left: 0;
+}
+
+/* Z-index and transforms managed by JS */
+#card-a, #card-b {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Transparent drag catcher — sits above both cards */
+#drag-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#drag-overlay:active { cursor: grabbing; }
+
+
+
+.card-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-title-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 50px 20px 25px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 24px;
+    pointer-events: none;
+}
+
+/* End state */
+.end-state {
+    text-align: center;
+    padding: 20px;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.end-icon {
+    font-size: 72px;
+    margin-bottom: 20px;
+    animation: bounce 1.5s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-12px); }
+}
+
+.end-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.end-sub {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.end-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-end-picks {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-end-picks:hover {
+    background: #7a2244;
+    transform: translateY(-2px);
+}
+
+.btn-end-reset {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: var(--dislike-red);
+    border: 2px solid var(--stats-red-bg);
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-end-reset:hover {
+    background: var(--stats-red-bg);
+    transform: translateY(-2px);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.btn-action {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-action:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.btn-action:active {
+    transform: translateY(2px);
+}
+
+.btn-dislike {
+    color: var(--dislike-red);
+}
+
+.btn-like {
+    color: var(--like-green);
+}
+
+/* --- СТРАНИЦА PICKS --- */
+.page-header {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.picks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.pick-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+}
+
+.pick-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* --- СТРАНИЦА PROFILE --- */
+.stats-grid {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.stat-card.liked {
+    background-color: var(--stats-green-bg);
+}
+
+.stat-card.disliked {
+    background-color: var(--stats-red-bg);
+}
+
+.stat-num {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 5px;
+}
+
+.stat-card.liked .stat-num {
+    color: var(--like-green);
+}
+
+.stat-card.disliked .stat-num {
+    color: var(--dislike-red);
+}
+
+.stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.btn-reset {
+    background-color: white;
+    color: var(--dislike-red);
+    border: 2px solid var(--stats-red-bg);
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-reset:hover {
+    background-color: var(--stats-red-bg);
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MyManicure - Your Picks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#30302f",
+              "on-secondary-container": "#646464",
+              "on-secondary-fixed-variant": "#464747",
+              "surface-container-highest": "#e4e2e0",
+              "primary": "#a52e5a",
+              "secondary-fixed": "#e3e2e2",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f5f3f1",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#a8315c",
+              "secondary-container": "#e3e2e2",
+              "surface-container-high": "#eae8e6",
+              "on-surface": "#1b1c1b",
+              "tertiary-fixed": "#93f6c9",
+              "inverse-on-surface": "#f2f0ee",
+              "on-background": "#1b1c1b",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#dbdad8",
+              "error-container": "#ffdad6",
+              "tertiary": "#00694a",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#005139",
+              "on-tertiary-container": "#f5fff7",
+              "surface-container": "#efedec",
+              "inverse-primary": "#ffb1c4",
+              "on-secondary-fixed": "#1b1c1c",
+              "background": "#fbf9f7",
+              "surface-variant": "#e4e2e0",
+              "on-primary": "#ffffff",
+              "outline-variant": "#dcbfc5",
+              "surface-bright": "#fbf9f7",
+              "on-surface-variant": "#564146",
+              "surface": "#fbf9f7",
+              "secondary-fixed-dim": "#c7c6c6",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#77d9ae",
+              "on-tertiary-fixed": "#002115",
+              "primary-fixed-dim": "#ffb1c4",
+              "secondary": "#5e5e5e",
+              "error": "#ba1a1a",
+              "primary-fixed": "#ffd9e1",
+              "on-primary-fixed-variant": "#881645",
+              "primary-container": "#c54772",
+              "tertiary-container": "#148460",
+              "on-primary-fixed": "#3f001a",
+              "on-primary-container": "#fffbff",
+              "outline": "#897176"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            column-count: 2;
+            column-gap: 1rem;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background min-h-screen pb-32 selection:bg-primary-fixed selection:text-on-primary-fixed-variant">
+<!-- TopAppBar from JSON -->
+<header class="bg-[#fbf9f7] dark:bg-stone-950 flex justify-between items-center w-full px-6 py-4 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#a52e5a] dark:text-[#c54772] hover:opacity-80 transition-opacity cursor-pointer">menu</span>
+<span class="font-serif italic text-2xl text-[#a52e5a] dark:text-[#c54772]">MyManicure</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#a52e5a] dark:text-[#c54772] hover:opacity-80 transition-opacity cursor-pointer">notifications</span>
+</div>
+</header>
+<main class="px-6 max-w-2xl mx-auto">
+<!-- Header Section -->
+<section class="flex justify-between items-end py-10">
+<div class="space-y-1">
+<h1 class="text-4xl font-headline italic font-bold tracking-tight text-on-surface">Your picks</h1>
+<p class="text-sm font-label text-on-secondary-container tracking-wide">Based on your taste</p>
+</div>
+<div class="bg-primary px-4 py-1.5 rounded-full shadow-[0_4px_12px_rgba(165,46,90,0.15)]">
+<span class="text-xs font-label font-semibold text-on-primary tracking-widest uppercase">487 scored</span>
+</div>
+</section>
+<!-- Masonry Content Grid -->
+<div class="masonry-grid">
+<!-- Card 1 -->
+<div class="masonry-item">
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_20px_40px_rgba(165,46,90,0.04)] hover:shadow-lg transition-all duration-300">
+<img class="w-full h-64 object-cover" data-alt="close-up of elegant minimalist almond shaped nails with soft dusty rose gradient and high glossy finish on warm skin tone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2IRrzqTurO6tHm1a2A781ssHCoOCwAmVahp8fP5F0WOxR9OQOuWLta1x4CuQ2oK2SCS52_yUNqO4uvL8wG4nXmWbhy-Z7jVAD_ZduyAAdyQkdkz6Sc5irAPpQvl1gH45RIbF2D7gM3EaakrB9TInqJ0WR4C71Ob4Q7xcnOv1c5VeNCS-FpDWca1BANxWnvXRHIhjN00ysEtA5iR7fybPqCsb1g-QvlU3pnnelomPn8ao_hSijQy7y9xE6Y26LOQT7JFzX0o-d8cl1"/>
+<div class="p-4 space-y-3">
+<h3 class="text-xs font-label font-medium text-on-secondary-container tracking-widest uppercase">Minimalist Rose</h3>
+<div class="inline-flex items-center px-3 py-1 bg-tertiary-fixed-dim text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold">
+                            98% MATCH
+                        </div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="masonry-item">
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_20px_40px_rgba(165,46,90,0.04)] hover:shadow-lg transition-all duration-300">
+<img class="w-full h-48 object-cover" data-alt="editorial shot of short square nails with delicate gold leaf accents and sheer milky white base polish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAinfc1EqlTbMKtQrQjWJiGXz-aEyBQcZ6GH3k4rZScr0XdAq7VIrz2WdsTzNno6VyewiBXV6C-l-M1nx88bSIwJvIHGb_pFBM83GSXETTvifw7TKTbl1ilCVTnsctaj4q4VnP3_klwiwGjH2yiSkX9TLyVdygbKbNN_EzZZeNPjiaFVQFmKOO-5YBvSTnIiuj_dPUamMnJufU7EInK5ooMxQj9jrJCy4tnyWSzpUHguyGb51wu7L_Bu9aldGi8vv5TjDtcdf5QuVhK"/>
+<div class="p-4 space-y-3">
+<h3 class="text-xs font-label font-medium text-on-secondary-container tracking-widest uppercase">Golden Glimmer</h3>
+<div class="inline-flex items-center px-3 py-1 bg-tertiary-fixed-dim text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold">
+                            94% MATCH
+                        </div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="masonry-item">
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_20px_40px_rgba(165,46,90,0.04)] hover:shadow-lg transition-all duration-300">
+<img class="w-full h-72 object-cover" data-alt="modern french manicure with deep red wine colored tips on natural long coffin shape nails magazine style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-TuqP6sTNR1oqvhzXWGd3dBBIAHeccV6jy9kPKbXto-jM8juZV1xEneRrUZ7zUb-746hZWsv30eJOUnHrl5sRK2DhthSRn6w2mApYhZRKR2g_fdysyMMkYezk-AmCMML-ULCU_NrlHxsNrTW8MqZd16U5h_zT5e69XOx6kWQPE4QxUpr2fs5M5mYTR5QMPM7V_hoEkQcV2bHCD8-dyn7U40a617v2v9gHdJpXyzonQKpFJDM2lxK9tiLCbzlgh6OiczMQZFsuuqIP"/>
+<div class="p-4 space-y-3">
+<h3 class="text-xs font-label font-medium text-on-secondary-container tracking-widest uppercase">Bordeaux Edge</h3>
+<div class="inline-flex items-center px-3 py-1 bg-tertiary-fixed-dim text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold">
+                            91% MATCH
+                        </div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="masonry-item">
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_20px_40px_rgba(165,46,90,0.04)] hover:shadow-lg transition-all duration-300">
+<img class="w-full h-56 object-cover" data-alt="soft focus macro photography of lavender pastel nails with matte finish and subtle geometric line art in silver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAsPH1URSMv8QzEDhBFhQan4LiTBCsEDKQL7oiZi45dgS18w5KGKfoBmQ9wWqjbn_lcY0GYU4YapwrIjJMzeCmQkgvE6Y50pk-hmapL7cnVCmFczUD5SQeAgCMja2PNczxs3qNDIiNSRz0Y7L9RwwmMPEkZU0QX8L7p457LRf-PY1_6Spxqh6TjeUAV0GHNar_SJMEi4UbTK5j6rS7Hz2wFcK3hQWC8xygOxeNG4bQYIajky3hui0VAusydeFxox4ROx3m47yaOEy0"/>
+<div class="p-4 space-y-3">
+<h3 class="text-xs font-label font-medium text-on-secondary-container tracking-widest uppercase">Lavender Mist</h3>
+<div class="inline-flex items-center px-3 py-1 bg-tertiary-fixed-dim text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold">
+                            88% MATCH
+                        </div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="masonry-item">
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_20px_40px_rgba(165,46,90,0.04)] hover:shadow-lg transition-all duration-300">
+<img class="w-full h-80 object-cover" data-alt="luxury high fashion nail art with iridescent chrome powder and 3D pearl embellishments on stiletto shape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBINQDyVd9dkpXXQIPDZnrQ74Zk_2zHMSCqhzOz6Hr-okcmA_Sljo11qOioGeQtSdfi3NR6FZG4CsM9EXua6uBP-fRtvRyW2toy8QTzdiUq1qwubpuWymt-9_TrxdJAK0eE5HQYZDhlWSxpw_9iwhZUMDyNFw66r8DeXF461neBqFg4NSPvV9is1ZW7yfviWrqc7HT-eVve2XYBFGloVoimLk4Kh0W5bbRaJ4eL6hwz757U1GISQUIBjDg8XyC_BHd7EuI2HyzhZsHE"/>
+<div class="p-4 space-y-3">
+<h3 class="text-xs font-label font-medium text-on-secondary-container tracking-widest uppercase">Chrome Pearl</h3>
+<div class="inline-flex items-center px-3 py-1 bg-tertiary-fixed-dim text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold">
+                            85% MATCH
+                        </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer from JSON -->
+<footer class="w-full flex justify-center items-center pb-32 py-12">
+<p class="font-sans text-xs tracking-tight text-center text-stone-400">MyManicure · Your personal nail stylist</p>
+</footer>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-11 left-0 right-0 z-50 flex justify-around items-center px-4 py-3 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl fixed bottom-8 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full border border-stone-200/10 shadow-[0_20px_40px_rgba(165,46,90,0.04)]">
+<!-- Home/Learn Tab -->
+<a class="flex items-center justify-center text-stone-400 dark:text-stone-500 w-12 h-12 hover:text-[#a52e5a] dark:hover:text-[#c54772] transition-colors group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 duration-300 ease-out" data-icon="local_fire_department">local_fire_department</span>
+</a>
+<!-- Picks Tab (ACTIVE) -->
+<a class="flex items-center justify-center bg-[#a52e5a] text-white rounded-full w-12 h-12 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+</a>
+<!-- Profile Tab -->
+<a class="flex items-center justify-center text-stone-400 dark:text-stone-500 w-12 h-12 hover:text-[#a52e5a] dark:hover:text-[#c54772] transition-colors group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 duration-300 ease-out" data-icon="person">person</span>
+</a>
+</nav>
+</body></html>

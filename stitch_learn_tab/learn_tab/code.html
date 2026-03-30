@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MyManicure - Learn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#30302f",
+              "on-secondary-container": "#646464",
+              "on-secondary-fixed-variant": "#464747",
+              "surface-container-highest": "#e4e2e0",
+              "primary": "#a52e5a",
+              "secondary-fixed": "#e3e2e2",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f5f3f1",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#a8315c",
+              "secondary-container": "#e3e2e2",
+              "surface-container-high": "#eae8e6",
+              "on-surface": "#1b1c1b",
+              "tertiary-fixed": "#93f6c9",
+              "inverse-on-surface": "#f2f0ee",
+              "on-background": "#1b1c1b",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#dbdad8",
+              "error-container": "#ffdad6",
+              "tertiary": "#00694a",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#005139",
+              "on-tertiary-container": "#f5fff7",
+              "surface-container": "#efedec",
+              "inverse-primary": "#ffb1c4",
+              "on-secondary-fixed": "#1b1c1c",
+              "background": "#fbf9f7",
+              "surface-variant": "#e4e2e0",
+              "on-primary": "#ffffff",
+              "outline-variant": "#dcbfc5",
+              "surface-bright": "#fbf9f7",
+              "on-surface-variant": "#564146",
+              "surface": "#fbf9f7",
+              "secondary-fixed-dim": "#c7c6c6",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#77d9ae",
+              "on-tertiary-fixed": "#002115",
+              "primary-fixed-dim": "#ffb1c4",
+              "secondary": "#5e5e5e",
+              "error": "#ba1a1a",
+              "primary-fixed": "#ffd9e1",
+              "on-primary-fixed-variant": "#881645",
+              "primary-container": "#c54772",
+              "tertiary-container": "#148460",
+              "on-primary-fixed": "#3f001a",
+              "on-primary-container": "#fffbff",
+              "outline": "#897176"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-stack-shadow {
+            box-shadow: 0 20px 40px rgba(165,46,90,0.04);
+        }
+        .glass-nav {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col items-center">
+<!-- Top Navigation Bar (Shared Component Logic) -->
+<nav class="bg-[#fbf9f7] dark:bg-stone-950 flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-stone-400 dark:text-stone-600">menu</span>
+</div>
+<div class="font-serif italic text-2xl text-[#a52e5a] dark:text-[#c54772]">MyManicure</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-stone-400 dark:text-stone-600">notifications</span>
+</div>
+</nav>
+<!-- Header Progress Area -->
+<header class="w-full max-w-md px-6 pt-24 pb-4 flex flex-col items-center">
+<div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden mb-3">
+<div class="w-[35%] h-full bg-primary transition-all duration-500"></div>
+</div>
+<span class="text-xs font-label tracking-widest text-secondary uppercase">7 of 20 rated</span>
+</header>
+<!-- Main Learning Area: Card Stack -->
+<main class="relative flex-1 w-full flex flex-col items-center justify-center gap-8 py-4">
+<div class="relative w-[75%] aspect-[3/4] max-w-[340px]">
+<!-- Background Card 2 (Visual depth) -->
+<div class="absolute inset-0 bg-surface-container-low rounded-lg translate-y-6 scale-90 opacity-40 z-0"></div>
+<!-- Background Card 1 (Visual depth) -->
+<div class="absolute inset-0 bg-surface-container-lowest rounded-lg translate-y-3 scale-95 opacity-80 z-10 card-stack-shadow border border-outline-variant/10"></div>
+<!-- Active Card -->
+<div class="absolute inset-0 bg-surface-container-lowest rounded-lg z-20 overflow-hidden card-stack-shadow border border-outline-variant/10 flex flex-col">
+<div class="flex-1 w-full relative">
+<img alt="Elegant pastel French tip manicure" class="w-full h-full object-cover" data-alt="Macro close-up of elegant pastel pink French tip manicure on almond shaped nails, soft studio lighting, professional photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgYPgLUYmurfbhtH739WQ1yZj1G2mWrrXMend6OVuEfxPCd1C4X_3PBx3INfoIKvN7GJPkKClwQIuHN5F9urhZMOp5yvHPrQOGRog1p8GqFf2RISaa5AgMbFR2rwL7Pz0KQX0y987Hcs-k2VMbE8IiHjmMsj6KJ-hh-NEEmrOXd2HsoI0RCe9zF2tY7HPI_UzsGAmYgb3uRToiTMgyZBnKWivhkfayQ6Xe3JwfkMyAS9_d-pdwtESBhSysOP0ikHaC_0jlc_59FDdM"/>
+<!-- Bottom Gradient Overlay -->
+<div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/90 to-transparent flex items-end justify-center pb-6 px-4">
+<span class="font-headline italic text-lg text-on-surface">Pastel french tip</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex flex-col items-center gap-4 z-30">
+<!-- Undo Button -->
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary shadow-sm hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-base">undo</span>
+</button>
+<!-- Main Choice Buttons -->
+<div class="flex items-center gap-8">
+<!-- Dislike Button -->
+<button class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center text-error card-stack-shadow hover:scale-105 active:scale-95 transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<!-- Like Button -->
+<button class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center text-tertiary card-stack-shadow hover:scale-105 active:scale-95 transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer Space -->
+<footer class="w-full flex justify-center items-center pb-32">
+<span class="font-sans text-xs tracking-tight text-center text-stone-400">MyManicure · Your personal nail stylist</span>
+</footer>
+<!-- Bottom Navigation Bar (Shared Component Logic) -->
+<nav class="fixed bottom-11 left-0 right-0 z-50 flex justify-center items-center px-4 py-3 pointer-events-none">
+<div class="bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl w-[90%] max-w-md rounded-full border border-stone-200/10 shadow-[0_20px_40px_rgba(165,46,90,0.04)] flex justify-around items-center px-4 py-2 pointer-events-auto">
+<!-- Learn Tab (Active) -->
+<button class="flex items-center justify-center bg-[#a52e5a] text-white rounded-full w-12 h-12 transition-all active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</button>
+<!-- Picks Tab (Inactive) -->
+<button class="flex items-center justify-center text-stone-400 dark:text-stone-500 w-12 h-12 hover:text-[#a52e5a] dark:hover:text-[#c54772] transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<!-- Profile Tab (Inactive) -->
+<button class="flex items-center justify-center text-stone-400 dark:text-stone-500 w-12 h-12 hover:text-[#a52e5a] dark:hover:text-[#c54772] transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</nav>
+</body></html>
